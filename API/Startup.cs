@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace API
 {
@@ -26,7 +27,8 @@ namespace API
         {
             services.AddRazorPages();
             services.AddDbContext<MeetUpContext>();
-            services.AddScoped<MeetUpSeeder>(); 
+            services.AddScoped<MeetUpSeeder>();
+            services.AddAutoMapper(this.GetType().Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
